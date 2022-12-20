@@ -1,42 +1,92 @@
-*{
-    margin: 0;
-  padding:0;
+*,
+:after,
+:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background: white;
-    margin-top: 5rem;
-    margin-left: 4rem;  
-    min-height: 100vh;
-    overflow-x: hidden;
+body {
+  background: white;
+  margin-top: 5rem;
+  margin-left: 4rem;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
-.imaginput{
-      height: 100%;
-  
-  width: 8%
+.imaginput {
+  height: 100%;
+
+  width: 8%;
 }
-.search{
-        height: 100%;
-    width: 95%;
-     font-size: 2rem;
-     border: none;
-    
+.search {
+  height: 100%;
+  width: 95%;
+  font-size: 2rem;
+  border: none;
 }
 
-.div-header{
-margin-top: 2rem;
-    margin-left: 4rem;
-    display: flex;
-    border-bottom: 5px solid rgb(96, 97, 99);
-    width: 50vw;
-    height: 3rem;
+.div-header {
+  margin-top: 2rem;
+  margin-left: 4rem;
+  display: flex;
+  border-bottom: 5px solid rgb(96, 97, 99);
+  width: 50vw;
+  height: 3rem;
 }
-.gallary{
-    width: 90%;
-    border: 1px solid black;
-    transform: translateX(-50);
-    display: grid;
-    grid-template-columns: repeat(3,400px);
-    row-gap: 10px;
-    column-gap: 10px;
+.gallery {
+  width: 90%;
+  margin: 4vh;
+  /* border: 1px solid black; */
+  transform: translateX(-50);
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  row-gap: 10px;
+  column-gap: 10px;
+  justify-content: center;
+}
+
+.gallery div {
+  position: relative;
+}
+
+.pic-class {
+  position: relative;
+  margin-left: 5px;
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.paradiv-class {
+  position: absolute;
+  top: -10.5vh;
+  margin-left: 1.5%;
+  padding: 2%;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  background: rgb(0 0 0 / 50%);
+  width: 100%;
+  display: none;
+  height: 5rem;
+}
+
+.pic-class:hover:hover + .paradiv-class {
+  display: block;
+}
+
+.profilediv-class {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 1vh;
+  left: 22vw;
+}
+
+.pic-class{
+    position: relative;
 }
