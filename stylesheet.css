@@ -90,3 +90,20 @@ body {
 .pic-class{
     position: relative;
 }
+
+/* // document.addEventListener(
+//   "scroll",
+//   (event) => {
+   
+//     if (!input.value) {
+//       pagenr++;
+//       createdPhotoes(pagenr);
+//     }
+//     // else{
+//     //     if(query.value === "")return;
+//     //     pagenr++;
+//     //     searchPhotos(query,pagenr)
+//     // }
+//   },
+//   { search: true }
+// ); */

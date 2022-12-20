@@ -13,11 +13,11 @@ input.addEventListener("input", (event) => {
 
 async function createdPhotoes(pagenr) {
   let data = await fetch(
-    `   https://api.unsplash.com/search/photos?client_id=${accessKey}&page=1&query=random&per_page=30`
+    `   https://api.unsplash.com/search/photos?client_id=${accessKey}&page=${pagenr}&query=random&per_page=30`
   );
   let result = await data.json();
   let apiData = result.results;
-  apiData.forEach((photo, index) => {
+  apiData.forEach((photo) => {
     let pic = document.createElement("div");
     let imageDiv = document.createElement("img");
     pic.appendChild(imageDiv);
@@ -48,7 +48,6 @@ async function searchPhotos(query, pagenr) {
     `   https://api.unsplash.com/search/photos?client_id=${accessKey}&page=${pagenr}&query=${query}&per_page=30`
   );
   let result = await data.json();
-  console.log(result);
   let apiData = result.results;
   apiData.forEach((photo) => {
     let pic = document.createElement("div");
@@ -75,6 +74,22 @@ async function searchPhotos(query, pagenr) {
   });
 }
 
+document.addEventListener(
+  "scroll",
+  (event) => {
+    if (!input.value) {
+      pagenr++;
+      createdPhotoes(pagenr);
+    } else {
+      if (query.value === "") return;
+      pagenr++;
+      searchPhotos(query, pagenr);
+    }
+  },
+  { search: true }
+);
+
+
 function clear() {
   input.value = "";
   document.querySelector(".gallery").innerHTML = "";
@@ -95,4 +110,6 @@ input.addEventListener("keypress", (event) => {
     searchPhotos(query, pagenr);
   }
 });
+
+
 createdPhotoes(pagenr);
