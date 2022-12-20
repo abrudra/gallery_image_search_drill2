@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+  padding:0;
+}
+
+body{
+    background: white;
+    margin-top: 5rem;
+    margin-left: 4rem;  
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+.imaginput{
+      height: 100%;
+  
+  width: 8%
+}
+.search{
+        height: 100%;
+    width: 95%;
+     font-size: 2rem;
+     border: none;
+    
+}
+
+.div-header{
+margin-top: 2rem;
+    margin-left: 4rem;
+    display: flex;
+    border-bottom: 5px solid rgb(96, 97, 99);
+    width: 50vw;
+    height: 3rem;
+}
+.gallary{
+    width: 90%;
+    border: 1px solid black;
+    transform: translateX(-50);
+    display: grid;
+    grid-template-columns: repeat(3,400px);
+    row-gap: 10px;
+    column-gap: 10px;
+}
